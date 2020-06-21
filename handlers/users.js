@@ -98,7 +98,7 @@ exports.login = (req, res) => {
 			// auth/user-not-found
 
 			return res.status(403).json({
-				general: "Wrong credentials, pleae try agan.",
+				general: "Wrong credentials, please try again.",
 			});
 		});
 };
