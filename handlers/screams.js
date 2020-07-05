@@ -32,6 +32,9 @@ exports.getAllScreams = (req, res) => {
 // --------POST A SCREAM------------
 
 exports.postOneScream = (req, res) => {
+	if (req.body.body.trim() === "") {
+		return res.status(400).json({ body: "Must not be empty" });
+	}
 	const newScream = {
 		body: req.body.body,
 		userHandle: req.user.handle,
